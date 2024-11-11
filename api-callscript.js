@@ -2,7 +2,7 @@ let previousImageUrl;
 
 document.getElementById('fetchBtn1').addEventListener('click', async () => {
 try {
-    const response = await fetch('https://api.waifu.pics/sfw/neko');
+    const response = await fetch('https://api.waifu.pics/sfw/megumin');
     const data = await response.json();
     previousImageUrl = document.getElementById('image').src; 
     document.getElementById('image').src = data.url;
