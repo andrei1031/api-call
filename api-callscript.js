@@ -1,21 +1,20 @@
-let previousImageUrl; 
-
+let pImage; 
 document.getElementById('fetchBtn1').addEventListener('click', async () => {
 try {
-    const response = await fetch('https://api.waifu.pics/sfw/megumin');
+    const response = await fetch('https://api.waifu.pics/sfw/bully');
     const data = await response.json();
-    previousImageUrl = document.getElementById('image').src; 
+    pImage = document.getElementById('image').src; 
     document.getElementById('image').src = data.url;
     document.getElementById('image').style.display = 'block';
 } catch (error) {
-    console.error('Error fetching image for btn 1:', error);
+    console.error("Error fetching image for button 1:", error);
 }
 });
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-if (previousImageUrl) {
-    document.getElementById('image').src = previousImageUrl;
+if (pImage) {
+    document.getElementById('image').src = pImage;
 } else {
-    console.warn('No previous image to display');
+    console.warn("No preview image");
 }
 });
